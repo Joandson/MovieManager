@@ -10,6 +10,7 @@ namespace MovieManager.Core.Repositories
 {
     public interface IGeneroRepository : IRepository<Genero>
     {
-
+        IEnumerable<Genero> GetAllNotDeleted();
+        Genero GetByIdNotDeleted(int? id);
     }
 }

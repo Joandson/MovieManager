@@ -18,5 +18,19 @@ namespace MovieManager.Persistence.Repositories
         {
             get { return Context as MovieManagerContext; }
         }
+
+        public IEnumerable<Genero> GetAllNotDeleted()
+        {
+            return Context.Generos.Where(x => x.Deleted == false).ToList();
+        }
+
+        public Genero GetByIdNotDeleted(int? id)
+        {
+
+            return Context.Generos.Where(filter => filter.Id == id).FirstOrDefault(x => x.Deleted == false);
+
+        }
+
+
     }
 }

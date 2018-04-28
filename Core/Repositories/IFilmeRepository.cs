@@ -9,5 +9,7 @@ namespace MovieManager.Core.Repositories
 {
     public interface IFilmeRepository : IRepository<Filme>
     {
+        IEnumerable<Filme> GetAllNotDeleted();
+        Filme GetByIdNotDeleted(int? id);
     }
 }

@@ -32,7 +32,7 @@ namespace MovieManager.Controllers
         // GET: Generoes
         public ActionResult Index()
         {
-            var Generos = _unitOfWork.Generos.GetAll();
+            var Generos = _unitOfWork.Generos.GetAllNotDeleted();
             var results = Mapper.Map<IEnumerable<Genero>, IEnumerable<GeneroViewModel>>(Generos);
             return View(results);
         }
@@ -59,12 +59,15 @@ namespace MovieManager.Controllers
             {
                 //Setando somente as propriedades do AuditableEntity
                 SetAuditableEntityProperties.SetFirstTimeAuditableProperties(generoVm, CurrentUserAsString());
+
                 generoVm.CreatedBy = CurrentUserAsString();
                 generoVm.DataDeCriacao = DateTime.Now;
+
                 var genero = Mapper.Map<GeneroViewModel, Genero>(generoVm);
 
                 _unitOfWork.Generos.Add(genero);
                 _unitOfWork.Complete();
+
                 return RedirectToAction("Index");
             }
 
@@ -78,7 +81,7 @@ namespace MovieManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Genero genero = _unitOfWork.Generos.GetById(id);
+            Genero genero = _unitOfWork.Generos.GetByIdNotDeleted(id);
             var mapperGenero = Mapper.Map<Genero, GeneroViewModel>(genero);
             if (genero == null)
             {
@@ -112,7 +115,7 @@ namespace MovieManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Genero genero = _unitOfWork.Generos.GetById(id);
+            Genero genero = _unitOfWork.Generos.GetByIdNotDeleted(id);
             var generoVm = Mapper.Map<Genero, GeneroViewModel>(genero);
             if (genero == null)
             {
@@ -126,7 +129,7 @@ namespace MovieManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Genero genero = _unitOfWork.Generos.GetById(id);
+            Genero genero = _unitOfWork.Generos.GetByIdNotDeleted(id);
             genero.Deleted = true;
             _unitOfWork.Complete();
             return RedirectToAction("Index");

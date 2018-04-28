@@ -16,5 +16,15 @@ namespace MovieManager.Persistence.Repositories
         {
             get { return Context as MovieManagerContext; }
         }
+
+        public IEnumerable<Filme> GetAllNotDeleted()
+        {
+            return Context.Filmes.Where(x => x.Deleted == false).ToList();
+        }
+
+        public Filme GetByIdNotDeleted(int? id)
+        {
+            return Context.Filmes.Where(filter => filter.Id == id).FirstOrDefault(x => x.Deleted == false);
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
+using MovieManager.Core.Domain;
 using MovieManager.Core.Repositories;
 
 namespace MovieManager.Persistence.Repositories
