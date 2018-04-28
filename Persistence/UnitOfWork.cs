@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MovieManager.Core;
+using MovieManager.Core.Repositories;
+using MovieManager.Persistence.Repositories;
 
 namespace MovieManager.Persistence
 {
@@ -15,11 +17,13 @@ namespace MovieManager.Persistence
         {
             _context = context;
             //Example Below
-            //People = new PersonRepository(_context);
+            Filmes = new FilmeRepository(_context);
+            Generos = new GeneroRepository(_context);
 
         }
         //The repositories used in the application must be set here , Example Below
-        //public IPersonRepository People { get; private set; }
+        public IFilmeRepository Filmes { get; set; }
+        public IGeneroRepository Generos { get; set; }
 
 
         public int Complete()

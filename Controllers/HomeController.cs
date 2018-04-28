@@ -18,7 +18,7 @@ namespace MovieManager.Controllers
         }
         public ActionResult Index()
         {
-            /* In order to use these notifications simply set the message type  and actual message and that's it!, Everything else has been done already */
+            /* In order to use these notifications simply set the message type  and actual message and that's it!, Everything else has been done already for ya :) */
             TempData["success"] = "Success Notifications Are Working Hooray!!!";
             TempData["info"] = "Info Notifications Are Working Hooray!!!";
             TempData["warning"] = "Warning Notifications Are Working Hooray!!!";

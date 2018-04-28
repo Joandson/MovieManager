@@ -11,6 +11,9 @@ namespace MovieManager.Persistence
 {
     public class MovieManagerContext : TrackerIdentityContext<ApplicationUser>
     {
+        public DbSet<Genero> Generos { get; set; }
+        public DbSet<Filme> Filmes { get; set; }
+
         public MovieManagerContext()
             : base("DefaultConnection")
         {
@@ -33,7 +36,7 @@ namespace MovieManager.Persistence
         public override int SaveChanges()
         {
             //This prevents the need to keep setting and re-setting this value in adding and updating actions
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataDeCriacao") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataDeCriacao") == null))
             {
                 if (entry.State == EntityState.Added)
                 {
@@ -45,10 +48,9 @@ namespace MovieManager.Persistence
                     entry.Property("DataDeCriacao").IsModified = false;
                 }
             }
-
             return base.SaveChanges();
         }
 
-        public System.Data.Entity.DbSet<MovieManager.Core.Domain.Filme> Filmes { get; set; }
+
     }
 }
