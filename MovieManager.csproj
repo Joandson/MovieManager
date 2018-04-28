@@ -238,6 +238,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\Domain\AuditableEntity.cs" />
     <Compile Include="Core\Domain\Filme.cs" />
+    <Compile Include="Core\Domain\FilmeGenero.cs" />
     <Compile Include="Core\Domain\Genero.cs" />
     <Compile Include="Core\Repositories\IFilmeRepository.cs" />
     <Compile Include="Core\Repositories\IGeneroRepository.cs" />
@@ -249,8 +250,13 @@
     <Compile Include="Migrations\201804282006308_initial.Designer.cs">
       <DependentUpon>201804282006308_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804282208401_AddedFilmeGeneroTable.cs" />
+    <Compile Include="Migrations\201804282208401_AddedFilmeGeneroTable.Designer.cs">
+      <DependentUpon>201804282208401_AddedFilmeGeneroTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfig\FilmeConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfig\FilmeGeneroConfiguration.cs" />
     <Compile Include="Persistence\EntityConfig\GeneroConfiguration.cs" />
     <Compile Include="Persistence\Repositories\FilmeRepository.cs" />
     <Compile Include="Persistence\Repositories\GeneroRepository.cs" />
@@ -533,6 +539,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804282006308_initial.resx">
       <DependentUpon>201804282006308_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804282208401_AddedFilmeGeneroTable.resx">
+      <DependentUpon>201804282208401_AddedFilmeGeneroTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -143,3 +143,4 @@ C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\bin\EntityFramework.MappingAPI.dll
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.csprojResolveAssemblyReference.cache
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\bin\EntityFramework.MappingAPI.pdb
+C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.Migrations.AddedFilmeGeneroTable.resources

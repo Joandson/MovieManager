@@ -16,12 +16,12 @@ namespace MovieManager.Core.Domain
         public string Nome { get; set; }
         public DateTime DataDeCriacao { get; set; }
         public bool Ativo { get; set; }
-        public List<int> GeneroList { get; set; }
+        public List<FilmeGenero> FilmeGeneroList { get; set; }
         public Genero Genero { get; set; }
 
         public Filme()
         {
-            GeneroList = new List<int>();
+            FilmeGeneroList = new List<FilmeGenero>();
         }
     }
 }

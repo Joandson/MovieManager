@@ -7,12 +7,13 @@ using MovieManager.Core.Domain;
 
 namespace MovieManager.Persistence.EntityConfig
 {
-    public class GeneroConfiguration : EntityTypeConfiguration<Genero>
+    public class FilmeGeneroConfiguration : EntityTypeConfiguration<FilmeGenero>
     {
-        public GeneroConfiguration()
+        public FilmeGeneroConfiguration()
         {
+            HasKey(table => new { table.FilmeId, table.GeneroId });
+
         }
-
-
     }
 }
+

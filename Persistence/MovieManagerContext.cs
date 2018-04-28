@@ -32,6 +32,7 @@ namespace MovieManager.Persistence
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.Add(new FilmeConfiguration());
+            modelBuilder.Configurations.Add(new FilmeGeneroConfiguration());
         }
         public override int SaveChanges()
         {
