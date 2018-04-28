@@ -143,3 +143,5 @@ C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\Movie.Manage
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\Movie.Manager.csproj.CopyComplete
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.dll
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.pdb
+C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\Movie.Manager.csprojResolveAssemblyReference.cache
+C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.Migrations.AddedFilmeTable_AddedGeneroTable_AddedLoggin.resources

@@ -9,9 +9,9 @@ namespace MovieManager.Persistence.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly Mvc5BoilerPlateContext Context;
+        protected readonly MovieManagerContext Context;
 
-        public Repository(Mvc5BoilerPlateContext context)
+        public Repository(MovieManagerContext context)
         {
             Context = context;
         }

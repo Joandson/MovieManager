@@ -1,14 +1,26 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
-</head>
-<body>
+﻿@*@using Microsoft.AspNet.Identity
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Client Manager | @ViewBag.Title </title>
+        <!-- Bootstrap -->
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="~/Content/nprogress.css" rel="stylesheet">
+        <!-- jQuery custom content scroller -->
+        <link href="~/Content/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+        <!-- Custom Theme Style -->
+        @Styles.Render("~/Content/css")
+        @RenderSection("styles", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/app")
+    </head>
+    <body class="nav-md">
     <input type="hidden" id="success"
            value="@TempData["success"]" />
     <input type="hidden" id="info"
@@ -17,39 +29,269 @@
            value="@TempData["warning"]" />
     <input type="hidden" id="error"
            value="@TempData["error"]" />
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col menu_fixed">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Index", "Home")" class="site_title">
+                            <center>Movie Manager</center>
+                        </a>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Content/Images/userpic.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Bem vindo,</span>
+                            <h2 id="IdentityUsername">@User.Identity.GetUserName().ToString()</h2>
+                        </div>
+                    </div>
+                    <br />
+                    <!-- sidebar menu -->
+                    <!---->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-sitemap"></i>Cadastros <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a>Pessoa<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                <li>
+                                                    <a href="@Url.Action("#", "#")">Nova Pessoa</a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("Index", "Person")">Pesquisar Pessoas</a>
+                                                </li>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+                                <!--menu block-->
+                                <li>
+                                    <a><i class="fa fa-file-text"></i>Relatórios <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a>Clientes<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                <li><a href="@Url.Action("Index", "Reports")">Relatório de Clientes</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <!------->
+                    @Html.Partial("_LoginPartial")
+                    <!------->
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
             </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    @RenderBody() <!-- The view will be called in here-->
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    <p align="right">Versão @ViewContext.Controller.GetType().Assembly.GetName().Version </p>
+                    <p><a href="https://www.linkedin.com/in/jhonatands/">Jhonatan de Souza</a> &reg; Todos Direitos Reservados.</p>
+
+                </div>
+                <div class="clearfix"></div>
+
+            </footer>
+
+            <!-- /footer content -->
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    <!-- NProgress -->
+    <script src="~/Scripts/nprogress.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/custom.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/toastr")
+
+    @Scripts.Render("~/bundles/inputmask")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Vendor/Gentelella/helpers/smartresize.js"></script>
+    <script src="~/Scripts/Vendor/Gentelella/gentelella.js"></script>
+    @RenderSection("scripts", required: false)
+    </body>
+    </html>*@
+@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Manager | @ViewBag.Title </title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- jQuery custom content scroller -->
+    <link href="~/Content/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body class="nav-md">
+    <input type="hidden" id="success"
+           value="@TempData["success"]" />
+    <input type="hidden" id="info"
+           value="@TempData["info"]" />
+    <input type="hidden" id="warning"
+           value="@TempData["warning"]" />
+    <input type="hidden" id="error"
+           value="@TempData["error"]" />
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col menu_fixed">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Index", "Home")" class="site_title">
+                            <center>Client Manager</center>
+                        </a>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Content/Images/userpic.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Bem vindo,</span>
+                            <h2 id="IdentityUsername">@User.Identity.GetUserName().ToString()</h2>
+                        </div>
+                    </div>
+                    <br />
+                    <!-- sidebar menu -->
+                    <!---->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-sitemap"></i>Cadastros <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a>Pessoa<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                <li>
+                                                    <a href="@Url.Action("Create", "Person")">Nova Pessoa</a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("Index", "Person")">Pesquisar Pessoas</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+                                <!--menu block-->
+                                <li>
+                                    <a><i class="fa fa-file-text"></i>Relatórios <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a>Clientes<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                <li><a href="@Url.Action("Index", "Reports")">Relatório de Clientes</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <!------->
+                    @Html.Partial("_LoginPartial")
+                    <!------->
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    @RenderBody() <!-- The view will be called in here-->
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    <p align="right">Versão @ViewContext.Controller.GetType().Assembly.GetName().Version </p>
+                    <p><a href="https://www.linkedin.com/in/jhonatands/">Jhonatan de Souza</a> &reg; Todos Direitos Reservados.</p>
+
+                </div>
+                <div class="clearfix"></div>
+
+            </footer>
+
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- NProgress -->
+    <script src="~/Scripts/nprogress.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/custom.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/inputmask")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Vendor/Gentelella/helpers/smartresize.js"></script>
+    <script src="~/Scripts/Vendor/Gentelella/gentelella.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
-

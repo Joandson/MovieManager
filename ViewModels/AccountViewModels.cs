@@ -52,10 +52,7 @@ namespace MovieManager.ViewModels
         [Display(Name = "Username")]
         public string Nickname { get; set; }
 
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+
 
         [Required]
         [DataType(DataType.Password)]

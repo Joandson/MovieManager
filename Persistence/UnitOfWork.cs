@@ -8,10 +8,10 @@ namespace MovieManager.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly Mvc5BoilerPlateContext _context;
+        private readonly MovieManagerContext _context;
 
         //here the unit of work will instaniate the repositories and use it across all of the application
-        public UnitOfWork(Mvc5BoilerPlateContext context)
+        public UnitOfWork(MovieManagerContext context)
         {
             _context = context;
             //Example Below
