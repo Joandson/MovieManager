@@ -20,7 +20,6 @@ namespace MovieManager.Persistence.EntityConfig
             Property(c => c.Ativo)
                 .IsRequired();
 
-
         }
     }
 }

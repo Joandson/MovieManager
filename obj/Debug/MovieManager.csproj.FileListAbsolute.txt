@@ -145,3 +145,4 @@ C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\bin\EntityFramework.MappingAPI.pdb
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.Migrations.AddedFilmeGeneroTable.resources
 C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.Migrations.RevertToSingleItem.resources
+C:\Users\Jhonatan\source\repos\MovieManager\Movie.Manager\obj\Debug\MovieManager.Migrations.AddedRequiredFieldsToGenero.resources

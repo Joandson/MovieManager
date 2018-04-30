@@ -62,7 +62,6 @@ namespace MovieManager.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -81,7 +80,7 @@ namespace MovieManager.Controllers
             {
                 case SignInStatus.Success:
                     TempData["success"] = "Usuário Logado com sucesso";
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Filmes");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

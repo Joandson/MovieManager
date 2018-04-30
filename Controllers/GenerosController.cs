@@ -38,20 +38,14 @@ namespace MovieManager.Controllers
             return View(results);
         }
 
-        // GET: Generoes/Details/5
-
 
         // GET: Generoes/Create
         public ActionResult Create()
         {
             var generoVm = new GeneroViewModel();
-            generoVm.Deleted = true;
             return View("GeneroEditForm", generoVm);
         }
 
-        // POST: Generoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(GeneroViewModel generoVm)

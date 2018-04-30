@@ -11,6 +11,14 @@ namespace MovieManager.Persistence.EntityConfig
     {
         public GeneroConfiguration()
         {
+            HasKey(c => c.Id);
+
+            Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(150);
+
+            Property(c => c.Ativo)
+                .IsRequired();
         }
 
 
