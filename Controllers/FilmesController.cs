@@ -45,6 +45,7 @@ namespace MovieManager.Controllers
         {
             var filmeVm = new FilmeViewModel();
             filmeVm.GeneroSL = _unitOfWork.Filmes.GetGenresSL();
+            ViewBag.Title = "Novo Filme";
 
             return View("FilmesEditForm", filmeVm);
         }
@@ -67,6 +68,7 @@ namespace MovieManager.Controllers
                 return RedirectToAction("Index");
             }
             filmeVm.GeneroSL = _unitOfWork.Filmes.GetGenresSL();
+            ViewBag.Title = "Novo Filme";
             return View("FilmesEditForm", filmeVm);
         }
 
@@ -83,6 +85,7 @@ namespace MovieManager.Controllers
             }
             var filmeVm = Mapper.Map<Filme, FilmeViewModel>(filme);
             filmeVm.GeneroSL = _unitOfWork.Filmes.GetGenresSL();
+            ViewBag.Title = "Alterar Cadastro de filme";
 
             return View("FilmesEditForm", filmeVm);
         }
@@ -100,6 +103,7 @@ namespace MovieManager.Controllers
                 return RedirectToAction("Index");
             }
             filmeVm.GeneroSL = _unitOfWork.Filmes.GetGenresSL();
+            ViewBag.Title = "Alterar cadastro de filme";
             return View("FilmesEditForm", filmeVm);
         }
 

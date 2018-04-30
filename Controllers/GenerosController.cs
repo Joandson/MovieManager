@@ -43,6 +43,7 @@ namespace MovieManager.Controllers
         public ActionResult Create()
         {
             var generoVm = new GeneroViewModel();
+            ViewBag.Title = "Nova Categoria";
             return View("GeneroEditForm", generoVm);
         }
 
@@ -67,7 +68,7 @@ namespace MovieManager.Controllers
 
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Title = "Nova Categoria";
             return View("GeneroEditForm", generoVm);
         }
 
@@ -84,6 +85,7 @@ namespace MovieManager.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Title = "Alterar Categoria";
             return View("GeneroEditForm", mapperGenero);
         }
 
@@ -103,6 +105,7 @@ namespace MovieManager.Controllers
                 TempData["success"] = "Gênero alterado com sucesso";
                 return RedirectToAction("Index");
             }
+            ViewBag.Title = "Alterar Categoria";
             return View("GeneroEditForm", generoVm);
         }
 

@@ -1,10 +1,10 @@
 ﻿@model MovieManager.ViewModels.FilmeViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = ViewBag.Title;
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())
@@ -48,8 +48,12 @@
         </div>
 
         <div class="form-group">
-            <div class="col-xs-offset-2 col-xs-10">
-                <input type="submit" value="Create" class="btn btn-success" />
+            <div class="col-xs-offset-2">
+                <input id="submit" type="submit" value="Salvar" class="btn btn-success" />
+                @Html.ActionLink("Cancelar", "Index",
+             new { controller = "Filmes" },
+             new { @class = "btn btn-danger" })
+
             </div>
         </div>
     </div>
@@ -57,7 +61,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index",null,new {@class = "btn btn-primary"})
 </div>
 
 @section Scripts {
