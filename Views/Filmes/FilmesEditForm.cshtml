@@ -1,0 +1,71 @@
+﻿@model MovieManager.ViewModels.FilmeViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.DataDeCriacao)
+    @Html.HiddenFor(x => x.CreationDate)
+    @Html.HiddenFor(x => x.CreatedBy)
+    @Html.HiddenFor(x => x.LastUpdateDate)
+    @Html.HiddenFor(x => x.LastUpdatedBy)
+
+    <div class="form-horizontal">
+        <h4>Filme</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Ativo)
+                    @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @*@Html.DropDownList("GenresSL", null, "Selecione um gênero", htmlAttributes: new { @class = "chosenSelect form-control" })*@
+                @Html.DropDownListFor(model => model.GeneroId, Model.GeneroSL, "Selecione uma Opção", new { @class = "form-control chosenSelect" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <link href="~/Scripts/chosen_v1.8.5/chosen.css" rel="stylesheet" />
+    <script src="~/Scripts/chosen_v1.8.5/chosen.jquery.js"></script>
+    <script src="~/Scripts/chosen_v1.8.5/chosen.proto.js"></script>
+    <script>
+        $(function () {
+            $(".chosenSelect").chosen();
+        });
+    </script>
+}

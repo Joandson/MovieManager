@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using MovieManager.Core.Domain;
 
 namespace MovieManager.Core.Repositories
@@ -11,5 +12,6 @@ namespace MovieManager.Core.Repositories
     {
         IEnumerable<Filme> GetAllNotDeleted();
         Filme GetByIdNotDeleted(int? id);
+        IEnumerable<SelectListItem> GetGenresSL();
     }
 }

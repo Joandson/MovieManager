@@ -37,7 +37,7 @@ namespace MovieManager.Persistence
         public override int SaveChanges()
         {
             //This prevents the need to keep setting and re-setting this value in adding and updating actions
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataDeCriacao") == null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataDeCriacao") != null))
             {
                 if (entry.State == EntityState.Added)
                 {

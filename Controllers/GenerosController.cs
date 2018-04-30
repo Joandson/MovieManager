@@ -16,6 +16,7 @@ using MovieManager.ViewModels;
 
 namespace MovieManager.Controllers
 {
+    [Authorize]
     public class GenerosController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -68,6 +69,8 @@ namespace MovieManager.Controllers
                 _unitOfWork.Generos.Add(genero);
                 _unitOfWork.Complete();
 
+                TempData["success"] = "Gênero criado com sucesso";
+
                 return RedirectToAction("Index");
             }
 
@@ -103,6 +106,7 @@ namespace MovieManager.Controllers
                 var genero = Mapper.Map<GeneroViewModel, Genero>(generoVm);
                 _unitOfWork.Generos.SetModifiedState(genero);
                 _unitOfWork.Complete();
+                TempData["success"] = "Gênero alterado com sucesso";
                 return RedirectToAction("Index");
             }
             return View("GeneroEditForm", generoVm);
@@ -132,6 +136,7 @@ namespace MovieManager.Controllers
             Genero genero = _unitOfWork.Generos.GetByIdNotDeleted(id);
             genero.Deleted = true;
             _unitOfWork.Complete();
+            TempData["info"] = "Gênero exluído com sucesso";
             return RedirectToAction("Index");
         }
 

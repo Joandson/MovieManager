@@ -80,6 +80,7 @@ namespace MovieManager.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    TempData["success"] = "Usuário Logado com sucesso";
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

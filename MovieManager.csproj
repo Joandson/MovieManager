@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201804282208401_AddedFilmeGeneroTable.Designer.cs">
       <DependentUpon>201804282208401_AddedFilmeGeneroTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804291910061_RevertToSingleItem.cs" />
+    <Compile Include="Migrations\201804291910061_RevertToSingleItem.Designer.cs">
+      <DependentUpon>201804291910061_RevertToSingleItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfig\FilmeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfig\FilmeGeneroConfiguration.cs" />
@@ -420,6 +424,27 @@
     <Content Include="Content\vendors\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\vendors\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\vendors\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen-sprite%402x.png" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen-sprite.png" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.css" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.jquery.js" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.jquery.min.js" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.min.css" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.proto.js" />
+    <Content Include="Scripts\chosen_v1.8.5\chosen.proto.min.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\chosen.png" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\init.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\init.proto.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\oss-credit.png" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\prism.css" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\prism.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\prototype-1.7.0.0.js" />
+    <Content Include="Scripts\chosen_v1.8.5\docsupport\style.css" />
+    <Content Include="Scripts\chosen_v1.8.5\index.html" />
+    <Content Include="Scripts\chosen_v1.8.5\index.proto.html" />
+    <Content Include="Scripts\chosen_v1.8.5\options.html" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.min.js" />
@@ -457,6 +482,9 @@
     <Content Include="Scripts\inputmask\phone-codes\phone-uk.min.js" />
     <Content Include="Scripts\inputmask\phone-codes\phone.js" />
     <Content Include="Scripts\inputmask\phone-codes\phone.min.js" />
+    <Content Include="Scripts\chosen_v1.8.5\bower.json" />
+    <Content Include="Scripts\chosen_v1.8.5\LICENSE.md" />
+    <Content Include="Scripts\chosen_v1.8.5\package.json" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -512,10 +540,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Filmes\Create.cshtml" />
+    <Content Include="Views\Filmes\FilmesEditForm.cshtml" />
     <Content Include="Views\Filmes\Delete.cshtml" />
-    <Content Include="Views\Filmes\Details.cshtml" />
-    <Content Include="Views\Filmes\Edit.cshtml" />
     <Content Include="Views\Filmes\Index.cshtml" />
     <Content Include="Views\Generos\GeneroEditForm.cshtml" />
     <Content Include="Views\Generos\Delete.cshtml" />
@@ -542,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804282208401_AddedFilmeGeneroTable.resx">
       <DependentUpon>201804282208401_AddedFilmeGeneroTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804291910061_RevertToSingleItem.resx">
+      <DependentUpon>201804291910061_RevertToSingleItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
