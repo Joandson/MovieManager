@@ -1,11 +1,11 @@
 # Movie Manager
-Um aplicação feita para gerenciar filmes que você está assistindo atualmente,, criada para demonstrar conhecimento nas tecnologias listadas abaixo
+### Um aplicação feita para gerenciar filmes que você está assistindo atualmente,, criada para demonstrar conhecimento nas tecnologias listadas abaixo
 
 Funcionalidades demonstradas
-1.CRUD Filmes
-2.CRUD Genres(Tipos de filmes).
+1. CRUD Filmes
+2. CRUD Genres(Tipos de filmes).
 
-Feito com meu Template "MVC5-Improved-Custom-Template" que tem o objetivo de ter suporte desde o início para : Repository Pattern, Unit of Work, Dependency Injection , Notifications , Logging global e a nível de entidade, Estrutura de pastas para melhores práticas de JRMP (Javascript Revealing Module Pattern)/
+Feito com meu Template "MVC5-Improved-Custom-Template" que tem o objetivo de ter suporte desde o início para : **Repository Pattern, Unit of Work, Dependency Injection , Notifications , Logging global e a nível de entidade, Estrutura de pastas para melhores práticas de JRMP (Javascript Revealing Module Pattern)**
 
 ### Usado os seguintes conceitos e tecnologias :
 1. Repository Pattern
