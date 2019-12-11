@@ -5,6 +5,13 @@ Funcionalidades demonstradas
 1. CRUD Filmes
 2. CRUD Genres(Tipos de filmes).
 
+# Como rodar o projeto
+
+1. Baixar e rodar o projeto no Visual Studio 2015+
+2. Altere o connection string dentro do arquivo web.config para o seu servidor SQL
+3. Rode o comando `update-database` dentro do package manager console
+4. Rode o projeto usando `Ctrl-F5`
+
 Feito com meu Template "MVC5-Improved-Custom-Template" que tem o objetivo de ter suporte desde o início para : **Repository Pattern, Unit of Work, Dependency Injection , Notifications , Logging global e a nível de entidade, Estrutura de pastas para melhores práticas de JRMP (Javascript Revealing Module Pattern)**
 
 ### Usado os seguintes conceitos e tecnologias :
