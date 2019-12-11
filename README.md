@@ -19,7 +19,7 @@ Feito com meu Template "MVC5-Improved-Custom-Template" que tem o objetivo de ter
 9. Folder Structure and Example for {Javascript's Revealing Module Pattern}
 10. Identity Login with Username and NOT email.
 
-###NuGet Packages usados e versões recomendadas
+### NuGet Packages usados e versões recomendadas
 
 1. Ninject MVC5 v3.2.1.0
 2. Ninject.Web.WebApi v3.2.1
